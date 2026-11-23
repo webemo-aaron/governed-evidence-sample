@@ -1,0 +1,28 @@
+Maestro Signed Evidence Pack — Offline Verification Instructions
+===============================================================
+
+Schema Version : evidence-pack.v1
+Scope          : outcome
+Verdict        : verified (pilot-attested)
+Org / Project  : org-maestro-showcase / Maestro Governed Evidence Delivery — Sanitized Reference Sample
+Commit SHA     : cf97c8ece0edca5516d148df5aefcad9704147b7
+Pack SHA-256   : 5cbc51f60469a7755242a220e29a11de7067022f892df2fe87b547dbe3d5b464
+Key ID         : b12e28ed7f858180 (Ed25519)
+HTML SHA-256   : 98afd400d020a8b445ecf141126296278883a580637546547c4b28341700c1e8
+
+1. Verify completely offline using the Maestro CLI (no DATABASE_URL or network needed):
+   unset DATABASE_URL
+   maestro evidence verify .
+
+   Or pass a pinned public key PEM:
+   maestro evidence verify ./evidence-pack.json --public-key ./org-signing-public.pem
+
+2. Verify standalone with OpenSSL / Node (zero Maestro install needed):
+   - Inspect `signature.publicKeyPem` and compare its SHA-256 to `signature.keyId`.
+   - Canonicalize `evidence-pack.json` with `signature` removed (deep-sorted JSON keys),
+     confirm its SHA-256 equals `signature.digestSha256`, and verify the Ed25519 signature:
+     node -e "const crypto=require('node:crypto'),fs=require('node:fs');const p=JSON.parse(fs.readFileSync('evidence-pack.json','utf8'));const {signature:s,...rest}=p;console.log('keyId:',s.keyId,'digest:',s.digestSha256);"
+
+3. Verify rendered HTML integrity:
+   sha256sum evidence-pack.html
+   Expected HTML SHA-256: 98afd400d020a8b445ecf141126296278883a580637546547c4b28341700c1e8

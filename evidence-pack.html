@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Maestro Evidence Pack — Maestro Governed Evidence Delivery — Sanitized Reference Sample</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 24px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+    line-height: 1.5;
+    font-size: 13px;
+  }
+  .container { max-width: 980px; margin: 0 auto; }
+  header.hero {
+    background: #0f172a;
+    color: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  header.hero h1 { margin: 0 0 6px; font-size: 20px; }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .meta-item { background: #1e293b; padding: 8px 10px; border-radius: 6px; }
+  .meta-label { font-size: 11px; color: #94a3b8; text-transform: uppercase; }
+  .meta-val { font-size: 13px; font-weight: 600; word-break: break-all; }
+  section.card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  h2 { margin: 0 0 10px; font-size: 15px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
+  h3 { margin: 12px 0 6px; font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 12px; }
+  th, td { border: 1px solid #e2e8f0; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #f1f5f9; font-weight: 600; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; word-break: break-all; }
+  .muted { color: #475569; font-size: 11px; }
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .badge-ok { background: #dcfce7; color: #166534; }
+  .badge-warn { background: #fef3c7; color: #92400e; }
+  .badge-bad { background: #fee2e2; color: #991b1b; }
+  .banner { padding: 10px 12px; border-radius: 6px; margin-bottom: 10px; font-size: 12px; }
+  .banner-ok { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+  .banner-bad { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+  .banner-estimate { background: #fffbeb; color: #78350f; border: 1px solid #fcd34d; }
+  .banner-disclaimer { background: #eff6ff; color: #1e3a8a; border: 1px solid #93c5fd; font-weight: 600; }
+  .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  details { margin-top: 8px; }
+  summary { cursor: pointer; font-weight: 600; color: #334155; }
+  footer.sig {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    font-size: 11px;
+  }
+  @media print {
+    body { background: #ffffff; padding: 0; font-size: 11px; }
+    section.card { break-inside: avoid; border-color: #94a3b8; }
+    header.hero { background: #0f172a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break-before { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header class="hero">
+    <h1>Maestro Signed Evidence Pack (outcome) — Maestro Governed Evidence Delivery — Sanitized Reference Sample</h1>
+    <div>Verdict: <span class="badge badge-ok">verified</span> &nbsp; Claim Boundary: <code>pilot-attested</code></div>
+    <div class="meta-grid">
+      <div class="meta-item"><div class="meta-label">Generated At</div><div class="meta-val">2026-11-23T19:00:00.000Z</div></div>
+      <div class="meta-item"><div class="meta-label">Commit SHA</div><div class="meta-val"><code>cf97c8ece0edca5516d148df5aefcad9704147b7</code></div></div>
+      <div class="meta-item"><div class="meta-label">Org / Codebase</div><div class="meta-val"><code data-evidence="org-id">org-maestro-showcase</code> / <code>cb-maestro-showcase</code></div></div>
+      <div class="meta-item"><div class="meta-label">Outcomes (1)</div><div class="meta-val">Governed Evidence &amp; Policy Gate Reference Verification</div></div>
+    </div>
+  </header>
+
+  <section class="card">
+    <h2>1. Executive Summary &amp; Verdict</h2>
+    <div class="banner banner-ok"><strong>All Gate Checks Satisfied</strong> — Claim boundary: <code>pilot-attested</code></div>
+    <p class="muted">Schema: <code>evidence-pack.v1</code> · Outcomes included: <code>O-SHOWCASE-SAMPLE-01</code> (Governed Evidence &amp; Policy Gate Reference Verification — closed)</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Ratified Contract</h2>
+    <p>Verification Status: <span class="badge badge-ok">verified</span> · Version: v1 · Decision: <code>dec-showcase-ratify-001</code> · By: <code data-evidence="actor-id">@operator-showcase</code> · At: 2026-11-23T18:30:00.000Z</p>
+    <p>Contract SHA-256: <code>f519fba23718c126d0b36142d0b64ea9bc043470daffcd82bded0504b76ee7c6</code></p>
+    <p>Cryptographic Ed25519 Evidence Pack v1 signing, fail-closed PII/credential redaction gating, HTML self-contained rendering, and compliance profile resolution verified from real JUnit test execution at origin/dev.</p>
+    <div class="split">
+      <div><h3>In Scope (4)</h3><ul><li>Canonical JSON SHA-256 + Ed25519 signing and offline verification</li><li>Fail-closed No-PHI and No-Secrets export safety gate</li><li>Deterministic JUnit test-to-criterion binding at pinned commit SHA</li><li>Compliance profile resolution and crosswalk generation</li></ul></div>
+      <div><h3>Out of Scope (3)</h3><ul><li>Private client infrastructure or production clinical data</li><li>Proprietary repositories and customer deployment manifests</li><li>Live SaaS hosting credentials or Postgres runtime access</li></ul></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. Acceptance Criteria Traceability Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Outcome</th>
+          <th>Criterion</th>
+          <th>Requirement</th>
+          <th>Method</th>
+          <th>Verification Source &amp; SHA-256</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+        <td><code>O-SHOWCASE-SAMPLE-01</code></td>
+        <td><strong>AC-01</strong></td>
+        <td>Canonical Ed25519 evidence pack signing, SHA-256 HTML integrity binding, audit hash chain continuity, and fail-closed safety gating pass automated verification</td>
+        <td>automated-test</td>
+        <td>unit: scanEvidencePackSafety &amp; assertEvidencePackSafe &gt; passes clean pack with ISO timestamps, SHA-256 digests, outcome IDs, and Ed25519 signature [passed]<br/>unit: scanEvidencePackSafety &amp; assertEvidencePackSafe &gt; rejects tokens, emails, SSNs, cards, phones, private keys, PHI keys, and synthetic markers [passed]<br/>unit: scanEvidencePackSafety &amp; assertEvidencePackSafe &gt; permits email-shaped orgId in schema-bound fields and HTML org-id slot while rejecting leaks elsewhere [passed]<br/>unit: scanEvidencePackSafety &amp; assertEvidencePackSafe &gt; permits numeric Telegram user IDs on schema-bound actor fields and HTML slots while failing closed elsewhere [passed]<br/>unit: Ed25519 key custody, signing &amp; offline verification &gt; mints encrypted Ed25519 key in vault dir, audits registration, signs, and detects JSON/audit/HTML tampering offline [passed]<br/><span class="muted">Artifact/Commit: <code>1776f455f9128416c2f052ad2084537c18ba54065584691ab3efaf050d808ad4</code></span></td>
+        <td><span class="badge badge-ok">passed</span></td>
+      </tr>
+<tr>
+        <td><code>O-SHOWCASE-SAMPLE-01</code></td>
+        <td><strong>AC-02</strong></td>
+        <td>Self-contained HTML evidence bundle rendering and tenant compliance profile policy resolution pass automated unit verification</td>
+        <td>automated-test</td>
+        <td>unit: renderEvidencePackHtml &amp; renderVerifyInstructions &gt; renders 100% self-contained, XSS-escaped HTML with all 8 sections, print CSS, footer hashes, and passes safety gate [passed]<br/>unit: renderEvidencePackHtml &amp; renderVerifyInstructions &gt; renders email-shaped orgId in dedicated data-evidence slot and passes safety gate [passed]<br/>unit: renderEvidencePackHtml &amp; renderVerifyInstructions &gt; renders numeric Telegram actor IDs in dedicated data-evidence slots and passes safety gate [passed]<br/>unit: renderEvidencePackHtml &amp; renderVerifyInstructions &gt; renders VERIFY.txt with offline CLI and Node/OpenSSL instructions [passed]<br/>unit: project profile &gt; fixtures validate against the schema [passed]<br/>unit: project profile &gt; rejects non-ISO codes (e.g. &quot;UK&quot; instead of &quot;GB&quot;) [passed]<br/>unit: project profile &gt; market matching: nationwide covers subdivisions, EU covers members [passed]<br/>unit: project profile &gt; delta adds a market and capability; nationwide absorbs subdivisions [passed]<br/>unit: project profile &gt; triggers are derived from the footprint [passed]<br/>unit: resolveApplicableRules &gt; US-only motel: no EU/UK/Canada rules; US federal + PCI apply [passed]<br/>unit: resolveApplicableRules &gt; explains why the EU Cyber Resilience Act is skipped for a US-only product [passed]<br/>unit: resolveApplicableRules &gt; US + Quebec adds PIPEDA, Law 25 and CASL, but not Ontario-only or EU rules [passed]<br/>unit: resolveApplicableRules &gt; EU kiosk vendor: GDPR, EAA, CRA reporting now, CRA essentials upcoming [passed]<br/>unit: resolveApplicableRules &gt; CRA reporting is upcoming before 2026-09-11 and applicable after [passed]<br/>unit: resolveApplicableRules &gt; US mobile app in TX/UT/ME: TX + UT age laws, not LA; only listed states’ privacy laws [passed]<br/>unit: resolveApplicableRules &gt; outcome delta widens the footprint for that outcome only [passed]<br/>unit: resolveApplicableRules &gt; knowledge-only rows and old verifications are flagged stale [passed]<br/>unit: resolveApplicableRules &gt; rejects a malformed asOf date [passed]<br/>unit: resolveApplicableRules &gt; renders markdown with applicable, upcoming and excluded sections [passed]<br/>unit: rule registry integrity &gt; ids are unique and every rule cites at least one https source [passed]<br/><span class="muted">Artifact/Commit: <code>1776f455f9128416c2f052ad2084537c18ba54065584691ab3efaf050d808ad4</code></span></td>
+        <td><span class="badge badge-ok">passed</span></td>
+      </tr>
+<tr>
+        <td><code>O-SHOWCASE-SAMPLE-01</code></td>
+        <td><strong>AC-03</strong></td>
+        <td>Human reviewer verifies sanitized reference disclosure boundaries, non-automated sign-off, and offline bundle portability prior to publication</td>
+        <td>human-attestation</td>
+        <td>Decision dec-showcase-attest-002 (<code data-evidence="actor-id">@operator-showcase</code>)<br/><span class="muted">Artifact/Commit: <code>cf97c8ece0edca5516d148df5aefcad9704147b7</code></span></td>
+        <td><span class="badge badge-ok">human-attested</span></td>
+      </tr></tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>4. Human Approvals &amp; Sign-Offs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Decision ID</th>
+          <th>Kind</th>
+          <th>Prompt</th>
+          <th>Choice / Note</th>
+          <th>Actor / Channel</th>
+          <th>Timestamp</th>
+        </tr>
+      </thead>
+      <tbody><tr>
+        <td><code>D-dec-show</code><br/><span class="muted">dec-showcase-ratify-001</span></td>
+        <td>solution-ratification</td>
+        <td>Ratify Solution Definition v1 scope and acceptance criteria for the sanitized reference verification slice?</td>
+        <td>Ratify v1<br/><span class="muted">Note: Approved scope and claim boundaries for public reference verification.</span></td>
+        <td><code data-evidence="actor-id">@operator-showcase</code> via cli</td>
+        <td>2026-11-23T18:30:00.000Z</td>
+      </tr>
+<tr>
+        <td><code>D-dec-show</code><br/><span class="muted">dec-showcase-attest-002</span></td>
+        <td>criterion-attestation</td>
+        <td>Attest AC-03 publication safety review for sanitized offline sample bundle?</td>
+        <td>Attest passed<br/><span class="muted">Note: Confirmed sanitized org metadata, pinned origin/dev SHA, and ephemeral Ed25519 key handling.</span></td>
+        <td><code data-evidence="actor-id">@operator-showcase</code> via cli</td>
+        <td>2026-11-23T18:55:00.000Z</td>
+      </tr></tbody>
+    </table>
+    <p class="muted">Buyer Countersignature: <strong>countersigned</strong> by Public Reference Reviewer (Sanitized Sample) at 2026-11-23T18:58:00.000Z</p>
+  </section>
+
+  <section class="card">
+    <h2>5. Tamper-Evident Audit Chain Proof</h2>
+    <p>Chain Integrity: <span class="badge badge-ok">verified</span> · Events: 3 · Seq Range: 1..3 · Head Hash: <code>9ba04dd3b70e34aea5542c5f39f265fcb9cc5e5770766c400ee04f2b0e187b7b</code></p>
+    <details>
+      <summary>Inspect contiguous audit entries (3)</summary>
+      <table>
+        <thead>
+          <tr><th>Seq</th><th>Event</th><th>Actor</th><th>Occurred At</th><th>Prev Hash</th><th>Entry Hash</th></tr>
+        </thead>
+        <tbody><tr>
+        <td>1</td>
+        <td><code>governance.solution_ratified</code></td>
+        <td><code data-evidence="actor-id">operator-showcase</code> (human)</td>
+        <td>2026-11-23T18:30:00.000Z</td>
+        <td><code>0000000000000000000000000000000000000000000000000000000000000000</code></td>
+        <td><code>ce05861f248d014b2323d709db6c528168479dfc142ee3aafaadfe0ce2bf7d5a</code></td>
+      </tr>
+<tr>
+        <td>2</td>
+        <td><code>verification.runner_report_recorded</code></td>
+        <td><code data-evidence="actor-id">junit-xml-parser</code> (system)</td>
+        <td>2026-11-23T18:45:00.000Z</td>
+        <td><code>ce05861f248d014b2323d709db6c528168479dfc142ee3aafaadfe0ce2bf7d5a</code></td>
+        <td><code>b402b390ad303380028ae1ebfa7d65d913115bcbd4f2292c520823f238c1d254</code></td>
+      </tr>
+<tr>
+        <td>3</td>
+        <td><code>approval.criterion_attested</code></td>
+        <td><code data-evidence="actor-id">operator-showcase</code> (human)</td>
+        <td>2026-11-23T18:55:00.000Z</td>
+        <td><code>b402b390ad303380028ae1ebfa7d65d913115bcbd4f2292c520823f238c1d254</code></td>
+        <td><code>9ba04dd3b70e34aea5542c5f39f265fcb9cc5e5770766c400ee04f2b0e187b7b</code></td>
+      </tr></tbody>
+      </table>
+    </details>
+  </section>
+
+  <section class="card">
+    <h2>6. Cost vs. Budget Accounting</h2>
+    <div class="split">
+      <div>
+        <h3>Measured Build Spend (Ledger Telemetry)</h3>
+        <p>Total Measured Spend: <strong>$1.42</strong> · Build Budget: <strong>$5.00</strong> · Cost Score: 100/10 (green)</p>
+        <table>
+          <thead><tr><th>Outcome</th><th>Budget</th><th>Measured Spend</th></tr></thead>
+          <tbody><tr>
+        <td><code>O-SHOWCASE-SAMPLE-01</code> — Governed Evidence &amp; Policy Gate Reference Verification</td>
+        <td>$5.00</td>
+        <td>$1.42</td>
+      </tr></tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Operator Recurring Cost &amp; Value</h3>
+        <div class="banner banner-estimate"><strong>Operator Estimate (Not Telemetry)</strong> — Monthly run/operate/manage and value figures are recorded operator estimates with no runtime telemetry source.</div>
+        <ul>
+          <li>Monthly Run: $0.00 · Operate: $0.00 · Manage: $0.00</li>
+          <li>Expected Monthly Volume: 100 · Cost/Unit Threshold: $0.05</li>
+          
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>7. Deploy Verification Record</h2>
+    <p class="muted">No live deployment recorded for this slice (sanitized offline reference sample)</p>
+  </section>
+
+  <section class="card">
+    <h2>8. Customer-Safe / No-PHI / No-Secrets Attestation</h2>
+    <p>Gate Status: <span class="badge badge-ok">passed</span> · Scanner: <code>evidence-safety-gate.v1</code> · Findings: 0 · Synthetic Allowed: false · Scanned At: 2026-11-23T19:00:00.000Z</p>
+  </section>
+
+  <section class="card page-break-before">
+        <h2>Compliance Crosswalk Appendix — HIPAA Security Rule — Technical Control Crosswalk</h2>
+        <div class="banner banner-disclaimer">Technical Control Evidence Only — This appendix maps verified Maestro engineering controls to regulatory clauses; it is not a legal attestation or third-party certification.</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Clause</th>
+              <th>Technical Control</th>
+              <th>Status</th>
+              <th>Evidence Summary</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+          <td><code>HIPAA §164.312(b)</code></td>
+          <td>Audit Controls — Hash-Chained Org Audit Log</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Verified 3 contiguous audit events (seq 1-3, head 9ba04dd3b70e).</td>
+        </tr>
+<tr>
+          <td><code>HIPAA §164.312(c)(1)</code></td>
+          <td>Integrity — SHA-256 Ratified Contract &amp; Ed25519 Pack Signature</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Solution definition v1 verified against DB ratification hash f519fba23718.</td>
+        </tr>
+<tr>
+          <td><code>HIPAA §164.312(d)</code></td>
+          <td>Person or Entity Authentication — Governed Operator Decisions</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>2 authenticated operator decision(s) recorded.</td>
+        </tr>
+<tr>
+          <td><code>HIPAA §164.308(a)(1)(ii)(D)</code></td>
+          <td>Information System Activity Review — Deterministic Criterion Verification</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>All 3 mapped acceptance criterion/criteria verified at commit cf97c8ece0ed.</td>
+        </tr>
+<tr>
+          <td><code>No-PHI Export Safety Gate</code></td>
+          <td>Fail-Closed Pre-Export PII/Secret/PHI-Key Scan</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Export safety gate passed (0 findings).</td>
+        </tr></tbody>
+        </table>
+      </section>
+<section class="card page-break-before">
+        <h2>Compliance Crosswalk Appendix — SOC 2 Trust Services Criteria — Technical Control Crosswalk</h2>
+        <div class="banner banner-disclaimer">Technical Control Evidence Only — This appendix maps verified Maestro engineering controls to regulatory clauses; it is not a legal attestation or third-party certification.</div>
+        <table>
+          <thead>
+            <tr>
+              <th>Clause</th>
+              <th>Technical Control</th>
+              <th>Status</th>
+              <th>Evidence Summary</th>
+            </tr>
+          </thead>
+          <tbody><tr>
+          <td><code>SOC 2 CC8.1</code></td>
+          <td>Change Management — Ratified Scope, Criteria Tests &amp; Release Approvals</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Contract v1, 3 criteria, and human sign-off verified.</td>
+        </tr>
+<tr>
+          <td><code>SOC 2 CC6.1 / CC6.2</code></td>
+          <td>Logical Access Controls &amp; Org-Scoped Isolation (RLS)</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Records scoped to the tenant organization with RLS-protected verification and decision trails.</td>
+        </tr>
+<tr>
+          <td><code>SOC 2 CC7.2</code></td>
+          <td>System Operations Monitoring &amp; Tamper-Evident Audit Logging</td>
+          <td><span class="badge badge-ok">supported</span></td>
+          <td>Hash-chained audit log verified across 3 events.</td>
+        </tr></tbody>
+        </table>
+      </section>
+
+  <footer class="sig">
+    <div><strong>Cryptographic Signature (Ed25519)</strong></div>
+    <div>Pack Digest (SHA-256): <code>5cbc51f60469a7755242a220e29a11de7067022f892df2fe87b547dbe3d5b464</code></div>
+    <div>Signing Key ID: <code data-evidence="key-id">b12e28ed7f858180</code> · Signed At: 2026-11-23T19:00:00.000Z</div>
+    <div>Signature (Base64): <code>yG5Gzwlrpij5d/GLzJ2DTYsqhh957XINA7SMhDzTNyxqDY3xq5OTtJFebH3UmAapiPpEutU63lbz5me+3swgDQ==</code></div>
+  </footer>
+</div>
+</body>
+</html>

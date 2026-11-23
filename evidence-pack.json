@@ -1,0 +1,573 @@
+{
+  "schemaVersion": "evidence-pack.v1",
+  "executiveSummary": {
+    "scope": "outcome",
+    "verdict": "verified",
+    "claimBoundary": "pilot-attested",
+    "blockers": [],
+    "generatedAt": "2026-11-23T19:00:00.000Z",
+    "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7",
+    "orgId": "org-maestro-showcase",
+    "codebaseId": "cb-maestro-showcase",
+    "projectTitle": "Maestro Governed Evidence Delivery — Sanitized Reference Sample",
+    "outcomeId": "O-SHOWCASE-SAMPLE-01",
+    "outcomeTitle": "Governed Evidence & Policy Gate Reference Verification",
+    "outcomeCount": 1,
+    "outcomesIncluded": [
+      {
+        "outcomeId": "O-SHOWCASE-SAMPLE-01",
+        "title": "Governed Evidence & Policy Gate Reference Verification",
+        "outcomeState": "closed",
+        "convergenceScore": 100
+      }
+    ]
+  },
+  "ratifiedContract": {
+    "present": true,
+    "verified": true,
+    "version": 1,
+    "contentHash": "f519fba23718c126d0b36142d0b64ea9bc043470daffcd82bded0504b76ee7c6",
+    "designSummary": "Cryptographic Ed25519 Evidence Pack v1 signing, fail-closed PII/credential redaction gating, HTML self-contained rendering, and compliance profile resolution verified from real JUnit test execution at origin/dev.",
+    "scopeIn": [
+      "Canonical JSON SHA-256 + Ed25519 signing and offline verification",
+      "Fail-closed No-PHI and No-Secrets export safety gate",
+      "Deterministic JUnit test-to-criterion binding at pinned commit SHA",
+      "Compliance profile resolution and crosswalk generation"
+    ],
+    "scopeOut": [
+      "Private client infrastructure or production clinical data",
+      "Proprietary repositories and customer deployment manifests",
+      "Live SaaS hosting credentials or Postgres runtime access"
+    ],
+    "decisionId": "dec-showcase-ratify-001",
+    "ratifiedBy": "@operator-showcase",
+    "ratifiedAt": "2026-11-23T18:30:00.000Z",
+    "failureReason": null
+  },
+  "criteriaMatrix": [
+    {
+      "outcomeId": "O-SHOWCASE-SAMPLE-01",
+      "criterionId": "AC-01",
+      "requirement": "Canonical Ed25519 evidence pack signing, SHA-256 HTML integrity binding, audit hash chain continuity, and fail-closed safety gating pass automated verification",
+      "layer": [
+        "unit"
+      ],
+      "nonAutomatable": false,
+      "verificationMethod": "automated-test",
+      "status": "passed",
+      "matchedTestCount": 5,
+      "failedTestCount": 0,
+      "matchedTests": [
+        {
+          "testLabel": "scanEvidencePackSafety & assertEvidencePackSafe > passes clean pack with ISO timestamps, SHA-256 digests, outcome IDs, and Ed25519 signature",
+          "filePath": "packages/core/src/evidence/signing-and-redaction.test.ts",
+          "suiteLabel": "scanEvidencePackSafety & assertEvidencePackSafe",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "scanEvidencePackSafety & assertEvidencePackSafe > rejects tokens, emails, SSNs, cards, phones, private keys, PHI keys, and synthetic markers",
+          "filePath": "packages/core/src/evidence/signing-and-redaction.test.ts",
+          "suiteLabel": "scanEvidencePackSafety & assertEvidencePackSafe",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "scanEvidencePackSafety & assertEvidencePackSafe > permits email-shaped orgId in schema-bound fields and HTML org-id slot while rejecting leaks elsewhere",
+          "filePath": "packages/core/src/evidence/signing-and-redaction.test.ts",
+          "suiteLabel": "scanEvidencePackSafety & assertEvidencePackSafe",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "scanEvidencePackSafety & assertEvidencePackSafe > permits numeric Telegram user IDs on schema-bound actor fields and HTML slots while failing closed elsewhere",
+          "filePath": "packages/core/src/evidence/signing-and-redaction.test.ts",
+          "suiteLabel": "scanEvidencePackSafety & assertEvidencePackSafe",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "Ed25519 key custody, signing & offline verification > mints encrypted Ed25519 key in vault dir, audits registration, signs, and detects JSON/audit/HTML tampering offline",
+          "filePath": "packages/core/src/evidence/signing-and-redaction.test.ts",
+          "suiteLabel": "Ed25519 key custody, signing & offline verification",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        }
+      ],
+      "reportSha256": "1776f455f9128416c2f052ad2084537c18ba54065584691ab3efaf050d808ad4",
+      "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7",
+      "decisionId": null,
+      "verifiedBy": "junit-xml-parser",
+      "verifiedAt": "2026-11-23T18:45:00.000Z"
+    },
+    {
+      "outcomeId": "O-SHOWCASE-SAMPLE-01",
+      "criterionId": "AC-02",
+      "requirement": "Self-contained HTML evidence bundle rendering and tenant compliance profile policy resolution pass automated unit verification",
+      "layer": [
+        "unit"
+      ],
+      "nonAutomatable": false,
+      "verificationMethod": "automated-test",
+      "status": "passed",
+      "matchedTestCount": 20,
+      "failedTestCount": 0,
+      "matchedTests": [
+        {
+          "testLabel": "renderEvidencePackHtml & renderVerifyInstructions > renders 100% self-contained, XSS-escaped HTML with all 8 sections, print CSS, footer hashes, and passes safety gate",
+          "filePath": "packages/core/src/evidence/html-renderer.test.ts",
+          "suiteLabel": "renderEvidencePackHtml & renderVerifyInstructions",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "renderEvidencePackHtml & renderVerifyInstructions > renders email-shaped orgId in dedicated data-evidence slot and passes safety gate",
+          "filePath": "packages/core/src/evidence/html-renderer.test.ts",
+          "suiteLabel": "renderEvidencePackHtml & renderVerifyInstructions",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "renderEvidencePackHtml & renderVerifyInstructions > renders numeric Telegram actor IDs in dedicated data-evidence slots and passes safety gate",
+          "filePath": "packages/core/src/evidence/html-renderer.test.ts",
+          "suiteLabel": "renderEvidencePackHtml & renderVerifyInstructions",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "renderEvidencePackHtml & renderVerifyInstructions > renders VERIFY.txt with offline CLI and Node/OpenSSL instructions",
+          "filePath": "packages/core/src/evidence/html-renderer.test.ts",
+          "suiteLabel": "renderEvidencePackHtml & renderVerifyInstructions",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "project profile > fixtures validate against the schema",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "project profile",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "project profile > rejects non-ISO codes (e.g. \"UK\" instead of \"GB\")",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "project profile",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "project profile > market matching: nationwide covers subdivisions, EU covers members",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "project profile",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "project profile > delta adds a market and capability; nationwide absorbs subdivisions",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "project profile",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "project profile > triggers are derived from the footprint",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "project profile",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > US-only motel: no EU/UK/Canada rules; US federal + PCI apply",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > explains why the EU Cyber Resilience Act is skipped for a US-only product",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > US + Quebec adds PIPEDA, Law 25 and CASL, but not Ontario-only or EU rules",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > EU kiosk vendor: GDPR, EAA, CRA reporting now, CRA essentials upcoming",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > CRA reporting is upcoming before 2026-09-11 and applicable after",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > US mobile app in TX/UT/ME: TX + UT age laws, not LA; only listed states’ privacy laws",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > outcome delta widens the footprint for that outcome only",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > knowledge-only rows and old verifications are flagged stale",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > rejects a malformed asOf date",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "resolveApplicableRules > renders markdown with applicable, upcoming and excluded sections",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "resolveApplicableRules",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        },
+        {
+          "testLabel": "rule registry integrity > ids are unique and every rule cites at least one https source",
+          "filePath": "packages/core/src/compliance/resolver.test.ts",
+          "suiteLabel": "rule registry integrity",
+          "layer": "unit",
+          "status": "passed",
+          "matchedBy": "tag"
+        }
+      ],
+      "reportSha256": "1776f455f9128416c2f052ad2084537c18ba54065584691ab3efaf050d808ad4",
+      "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7",
+      "decisionId": null,
+      "verifiedBy": "junit-xml-parser",
+      "verifiedAt": "2026-11-23T18:45:00.000Z"
+    },
+    {
+      "outcomeId": "O-SHOWCASE-SAMPLE-01",
+      "criterionId": "AC-03",
+      "requirement": "Human reviewer verifies sanitized reference disclosure boundaries, non-automated sign-off, and offline bundle portability prior to publication",
+      "layer": [],
+      "nonAutomatable": true,
+      "verificationMethod": "human-attestation",
+      "status": "human-attested",
+      "matchedTestCount": 0,
+      "failedTestCount": 0,
+      "matchedTests": [],
+      "reportSha256": null,
+      "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7",
+      "decisionId": "dec-showcase-attest-002",
+      "verifiedBy": "@operator-showcase",
+      "verifiedAt": "2026-11-23T18:55:00.000Z"
+    }
+  ],
+  "humanApprovals": {
+    "records": [
+      {
+        "decisionId": "dec-showcase-ratify-001",
+        "shortCode": "D-dec-show",
+        "contextKind": "solution-ratification",
+        "question": "Ratify Solution Definition v1 scope and acceptance criteria for the sanitized reference verification slice?",
+        "chosenOption": "Ratify v1",
+        "answerText": "Approved scope and claim boundaries for public reference verification.",
+        "actor": "@operator-showcase",
+        "actorRole": "operator",
+        "channel": "cli",
+        "decisionStatus": "answered",
+        "createdAt": "2026-11-23T18:28:00.000Z",
+        "answeredAt": "2026-11-23T18:30:00.000Z",
+        "targetBindingSummary": "ratification:cb-maestro-showcase:v1:f519fba23718"
+      },
+      {
+        "decisionId": "dec-showcase-attest-002",
+        "shortCode": "D-dec-show",
+        "contextKind": "criterion-attestation",
+        "question": "Attest AC-03 publication safety review for sanitized offline sample bundle?",
+        "chosenOption": "Attest passed",
+        "answerText": "Confirmed sanitized org metadata, pinned origin/dev SHA, and ephemeral Ed25519 key handling.",
+        "actor": "@operator-showcase",
+        "actorRole": "operator",
+        "channel": "cli",
+        "decisionStatus": "answered",
+        "createdAt": "2026-11-23T18:54:00.000Z",
+        "answeredAt": "2026-11-23T18:55:00.000Z",
+        "targetBindingSummary": "criterion:O-SHOWCASE-SAMPLE-01:AC-03@cf97c8ece0ed"
+      }
+    ],
+    "buyerCountersignature": {
+      "countersignStatus": "countersigned",
+      "signerLabel": "Public Reference Reviewer (Sanitized Sample)",
+      "signedAt": "2026-11-23T18:58:00.000Z",
+      "notes": "Signed with an ephemeral Ed25519 keypair generated solely for this sanitized public reference sample; private key discarded after signing."
+    }
+  },
+  "auditChain": {
+    "orgId": "org-maestro-showcase",
+    "firstSeq": 1,
+    "lastSeq": 3,
+    "headHash": "9ba04dd3b70e34aea5542c5f39f265fcb9cc5e5770766c400ee04f2b0e187b7b",
+    "entryCount": 3,
+    "chainVerified": true,
+    "brokenAtSeq": null,
+    "reason": null,
+    "entries": [
+      {
+        "id": "aud-showcase-001",
+        "orgId": "org-maestro-showcase",
+        "seq": 1,
+        "eventType": "governance.solution_ratified",
+        "category": "governance",
+        "actorId": "operator-showcase",
+        "actorClass": "human",
+        "actorRole": "operator",
+        "channel": "cli",
+        "targetSubject": "ratification:cb-maestro-showcase:v1",
+        "outcomeId": "O-SHOWCASE-SAMPLE-01",
+        "decisionId": "dec-showcase-ratify-001",
+        "metadata": {
+          "version": 1,
+          "contentHash": "f519fba23718c126d0b36142d0b64ea9bc043470daffcd82bded0504b76ee7c6",
+          "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7"
+        },
+        "occurredAt": "2026-11-23T18:30:00.000Z",
+        "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+        "entryHash": "ce05861f248d014b2323d709db6c528168479dfc142ee3aafaadfe0ce2bf7d5a"
+      },
+      {
+        "id": "aud-showcase-002",
+        "orgId": "org-maestro-showcase",
+        "seq": 2,
+        "eventType": "verification.runner_report_recorded",
+        "category": "verification",
+        "actorId": "junit-xml-parser",
+        "actorClass": "system",
+        "actorRole": "verifier",
+        "channel": "cli",
+        "targetSubject": "outcome:O-SHOWCASE-SAMPLE-01@cf97c8ece0ed",
+        "outcomeId": "O-SHOWCASE-SAMPLE-01",
+        "decisionId": null,
+        "metadata": {
+          "runnerFormat": "junit-xml",
+          "reportSha256": "1776f455f9128416c2f052ad2084537c18ba54065584691ab3efaf050d808ad4",
+          "totalCases": 25,
+          "passedCases": 25,
+          "failedCases": 0,
+          "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7"
+        },
+        "occurredAt": "2026-11-23T18:45:00.000Z",
+        "prevHash": "ce05861f248d014b2323d709db6c528168479dfc142ee3aafaadfe0ce2bf7d5a",
+        "entryHash": "b402b390ad303380028ae1ebfa7d65d913115bcbd4f2292c520823f238c1d254"
+      },
+      {
+        "id": "aud-showcase-003",
+        "orgId": "org-maestro-showcase",
+        "seq": 3,
+        "eventType": "approval.criterion_attested",
+        "category": "approval",
+        "actorId": "operator-showcase",
+        "actorClass": "human",
+        "actorRole": "operator",
+        "channel": "cli",
+        "targetSubject": "criterion:O-SHOWCASE-SAMPLE-01:AC-03@cf97c8ece0ed",
+        "outcomeId": "O-SHOWCASE-SAMPLE-01",
+        "decisionId": "dec-showcase-attest-002",
+        "metadata": {
+          "criterionId": "AC-03",
+          "status": "human-attested",
+          "commitSha": "cf97c8ece0edca5516d148df5aefcad9704147b7"
+        },
+        "occurredAt": "2026-11-23T18:55:00.000Z",
+        "prevHash": "b402b390ad303380028ae1ebfa7d65d913115bcbd4f2292c520823f238c1d254",
+        "entryHash": "9ba04dd3b70e34aea5542c5f39f265fcb9cc5e5770766c400ee04f2b0e187b7b"
+      }
+    ]
+  },
+  "costAccounting": {
+    "measuredBuildSpend": {
+      "available": true,
+      "totalUsd": 1.42,
+      "budgetBuildCostUsd": 5,
+      "byOutcome": [
+        {
+          "outcomeId": "O-SHOWCASE-SAMPLE-01",
+          "outcomeTitle": "Governed Evidence & Policy Gate Reference Verification",
+          "budgetUsd": 5,
+          "actualUsd": 1.42
+        }
+      ],
+      "costScore": 100,
+      "costBand": "green"
+    },
+    "operatorEstimates": {
+      "disclaimer": "Operator Estimate (Not Telemetry)",
+      "monthlyRunUsd": 0,
+      "monthlyOperateUsd": 0,
+      "monthlyManageUsd": 0,
+      "expectedMonthlyVolume": 100,
+      "costPerUnitThresholdUsd": 0.05,
+      "assumptions": [
+        "Illustrative reference budget for the sanitized documentation sample; offline CLI verification executes locally without database or model calls."
+      ],
+      "valueSummary": null
+    }
+  },
+  "deployVerification": {
+    "deployed": false,
+    "statusNotice": "No live deployment recorded for this slice (sanitized offline reference sample)",
+    "manifests": []
+  },
+  "noPhiAttestation": {
+    "gateStatus": "passed",
+    "scannedAt": "2026-11-23T19:00:00.000Z",
+    "syntheticAllowed": false,
+    "findingsCount": 0,
+    "scannerVersion": "evidence-safety-gate.v1"
+  },
+  "complianceCrosswalk": [
+    {
+      "profile": "regulated-healthcare",
+      "profileTitle": "HIPAA Security Rule — Technical Control Crosswalk",
+      "disclaimer": "Technical Control Evidence Only — This appendix maps verified Maestro engineering controls to regulatory clauses; it is not a legal attestation or third-party certification.",
+      "controls": [
+        {
+          "clauseId": "HIPAA §164.312(b)",
+          "controlTitle": "Audit Controls — Hash-Chained Org Audit Log",
+          "controlStatus": "supported",
+          "evidenceSummary": "Verified 3 contiguous audit events (seq 1-3, head 9ba04dd3b70e).",
+          "referencedSections": [
+            "auditChain"
+          ]
+        },
+        {
+          "clauseId": "HIPAA §164.312(c)(1)",
+          "controlTitle": "Integrity — SHA-256 Ratified Contract & Ed25519 Pack Signature",
+          "controlStatus": "supported",
+          "evidenceSummary": "Solution definition v1 verified against DB ratification hash f519fba23718.",
+          "referencedSections": [
+            "ratifiedContract",
+            "signature"
+          ]
+        },
+        {
+          "clauseId": "HIPAA §164.312(d)",
+          "controlTitle": "Person or Entity Authentication — Governed Operator Decisions",
+          "controlStatus": "supported",
+          "evidenceSummary": "2 authenticated operator decision(s) recorded.",
+          "referencedSections": [
+            "humanApprovals"
+          ]
+        },
+        {
+          "clauseId": "HIPAA §164.308(a)(1)(ii)(D)",
+          "controlTitle": "Information System Activity Review — Deterministic Criterion Verification",
+          "controlStatus": "supported",
+          "evidenceSummary": "All 3 mapped acceptance criterion/criteria verified at commit cf97c8ece0ed.",
+          "referencedSections": [
+            "criteriaMatrix",
+            "executiveSummary"
+          ]
+        },
+        {
+          "clauseId": "No-PHI Export Safety Gate",
+          "controlTitle": "Fail-Closed Pre-Export PII/Secret/PHI-Key Scan",
+          "controlStatus": "supported",
+          "evidenceSummary": "Export safety gate passed (0 findings).",
+          "referencedSections": [
+            "noPhiAttestation"
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "soc2",
+      "profileTitle": "SOC 2 Trust Services Criteria — Technical Control Crosswalk",
+      "disclaimer": "Technical Control Evidence Only — This appendix maps verified Maestro engineering controls to regulatory clauses; it is not a legal attestation or third-party certification.",
+      "controls": [
+        {
+          "clauseId": "SOC 2 CC8.1",
+          "controlTitle": "Change Management — Ratified Scope, Criteria Tests & Release Approvals",
+          "controlStatus": "supported",
+          "evidenceSummary": "Contract v1, 3 criteria, and human sign-off verified.",
+          "referencedSections": [
+            "ratifiedContract",
+            "criteriaMatrix",
+            "humanApprovals",
+            "deployVerification"
+          ]
+        },
+        {
+          "clauseId": "SOC 2 CC6.1 / CC6.2",
+          "controlTitle": "Logical Access Controls & Org-Scoped Isolation (RLS)",
+          "controlStatus": "supported",
+          "evidenceSummary": "Records scoped to the tenant organization with RLS-protected verification and decision trails.",
+          "referencedSections": [
+            "humanApprovals",
+            "auditChain"
+          ]
+        },
+        {
+          "clauseId": "SOC 2 CC7.2",
+          "controlTitle": "System Operations Monitoring & Tamper-Evident Audit Logging",
+          "controlStatus": "supported",
+          "evidenceSummary": "Hash-chained audit log verified across 3 events.",
+          "referencedSections": [
+            "auditChain",
+            "deployVerification"
+          ]
+        }
+      ]
+    }
+  ],
+  "signature": {
+    "keyId": "b12e28ed7f858180",
+    "algorithm": "Ed25519",
+    "publicKeyPem": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAZWRcOQDMPPtl/A8Be9M0a64yV6zhpJ+X9FlZ/wPDev0=\n-----END PUBLIC KEY-----\n",
+    "digestSha256": "5cbc51f60469a7755242a220e29a11de7067022f892df2fe87b547dbe3d5b464",
+    "signatureBase64": "yG5Gzwlrpij5d/GLzJ2DTYsqhh957XINA7SMhDzTNyxqDY3xq5OTtJFebH3UmAapiPpEutU63lbz5me+3swgDQ==",
+    "signedAt": "2026-11-23T19:00:00.000Z",
+    "htmlSha256": "98afd400d020a8b445ecf141126296278883a580637546547c4b28341700c1e8",
+    "htmlSignatureBase64": "ZNZfHkXekx8nh5xRIaXIuqZ7TDSd39XA47B/KsbWfoEpqe0nsjKrUYfA/SQ/pw7Se6UiltWdR98XEzWpORIDBA=="
+  }
+}
